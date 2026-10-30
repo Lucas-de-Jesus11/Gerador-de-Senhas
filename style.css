@@ -1,0 +1,223 @@
+body {
+  background-color: #f8fafd;
+  color: #252525;
+  padding: 2rem; /* 1rem = 16px, 2rem = 32px... */
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+}
+main {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* Seção Home */
+.home {
+  text-align: center;
+  padding-bottom: 3rem;
+}
+.home .title {
+  font-size: 2rem;
+  font-weight: bold;
+  padding-bottom: 1.5rem;
+}
+.home .subtitle {
+  font-size: 1.125rem;
+  color: #828282;
+}
+
+/* Seção Box */
+.box {
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(132, 148, 165, 0.1);
+  border-radius: 8px;
+  margin-bottom: 3rem;
+}
+
+/* Área da senha */
+.password {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+.password .text {
+  flex: 1;
+}
+.password .text input {
+  font-size: 3rem;
+  width: 100%;
+  height: 52px;
+  border: none;
+  outline: none;
+  transition: all 0.2s;
+  cursor: default;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+/* Classes de cor aplicada no JS */
+.password .text input.font-small {
+  font-size: 2rem;
+  color: rgba(0, 0, 0, 0.700);
+}
+.password .text input.font-mid {
+  font-size: 1.5rem;
+  color: rgba(0, 0, 0, 0.500);
+}
+.password .text input.font-big {
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.300);
+}
+
+/* Botões de ação */
+.password .actions button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 1s;
+}
+
+/* Indicador de segurança da senha */
+.indicator {
+  background-color: #ddd;
+  height: 10px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.indicator .bar {
+  /* background-color: red */
+  height: 10px;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  transition: all 0.2;
+}
+/* Quando chegar a 100% */
+.indicator .bar.completed {
+  border-top-right-radius: 0px;
+}
+
+/* Cor do indicador controlado pelo JS */
+.indicator .bar.critical {
+  background-color: red; /*vermelho = fraco*/
+}
+.indicator .bar.warning {
+  background-color: yellow; /*amarelo = média*/
+}
+.indicator .bar.safe {
+  background-color: green; /*verde = forte*/
+}
+
+/* Área de customização */
+.customize {
+  padding: 1rem 1.5rem;
+}
+.customize .title {
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  padding-bottom: 0.75rem;
+}
+.customize .actions {
+  display: flex;
+  gap: 3rem;
+  color: #828282;
+}
+
+/* Slider */
+.customize .passwordLength {
+  flex: 1;
+}
+.customize .passwordLength .slider {
+  appearance: none; /*Remove o estilo padrão*/
+  background-color: #dddddd;
+  height: 10px;
+  outline: none;
+  border-radius: 8px;
+  width: 100%;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  margin-top: 1rem;
+}
+.customize .passwordLength .slider:hover {
+  opacity: 1;
+}
+
+/* Bolinha do slider  */
+.customize .passwordLength .slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
+  background-color: #9b51e0;
+  cursor: pointer;
+}
+
+/* Checkbox customizado */
+.checkboxContainer {
+  display: block;
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  user-select: none; /*Impossível selecionar o texto*/
+}
+.checkboxContainer input {
+  position: absolute;
+  height: 0;
+  width: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.checkboxContainer .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #dddddd;
+  transition: all 0.2s;
+}
+.checkboxContainer:hover input ~ .checkmark {
+  /* "~" Seleciona elemento que vem depois */
+  background-color: #cccccc;
+}
+.checkboxContainer input:checked ~ .checkmark {
+  /* "~" Seleciona elemento que vem depois */
+  background-color: #9b51e0;
+}
+
+/* Simbolo checked */
+.checkboxContainer .checkmark:after {
+  content: "";
+  display: none;
+  position: absolute;
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 13px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+.checkboxContainer input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Botão copiar final  */
+.submit{
+  text-align: center;
+}
+.submit button{
+  background-color: #bb6bd9;
+  font-size: 1.375rem;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  transition: all 0.2s;
+}
+.submit button:hover{
+  background-color: #9b51e0;
+}
